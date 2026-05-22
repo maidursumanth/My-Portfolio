@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .dark {
+    /* Dark Theme Default as requested */
+    --background: 15 23% 17%;
+    --foreground: 210 40% 96%;
+    
+    --card: 45 33% 22%;
+    --card-foreground: 210 40% 96%;
+    
+    --popover: 45 33% 22%;
+    --popover-foreground: 210 40% 96%;
+    
+    --primary: 180 100% 50%;
+    --primary-foreground: 15 23% 17%;
+    
+    --secondary: 30 41% 18%;
+    --secondary-foreground: 210 40% 96%;
+    
+    --muted: 30 41% 18%;
+    --muted-foreground: 210 14% 83%;
+    
+    --accent: 210 100% 50%;
+    --accent-foreground: 210 40% 96%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 96%;
+    
+    --border: 210 17% 32%;
+    --input: 210 17% 32%;
+    --ring: 180 100% 50%;
+    
+    --radius: 0.75rem;
+    
+    /* Timeline & Elevation Tokens */
+    --timeline-color: 210 17% 32%;
+    --timeline-width: 2px;
+    --card-elevation: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --card-elevation-hover: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+
+    /* Project Specific Tokens */
+    --project-card-bg: 45 33% 22%;
+    --project-card-border: 210 17% 32%;
+    --filter-btn-bg: 30 41% 18%;
+    --filter-btn-text: 210 40% 96%;
+    --filter-btn-active-bg: 180 100% 50%;
+    --filter-btn-active-text: 15 23% 17%;
+  }
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  overflow-x: clip;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--card-elevation);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-elevation-hover);
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border: 1px solid hsl(var(--border));
+  transition: all 0.2s;
+}
+
+.tech-badge:hover {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(var(--primary));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.section-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Timeline Utilities */
+.timeline-container {
+  position: relative;
+}
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.5rem;
+  width: var(--timeline-width);
+  background-color: hsl(var(--timeline-color));
+}
+@media (min-width: 768px) {
+  .timeline-container::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
