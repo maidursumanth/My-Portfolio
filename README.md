@@ -116,24 +116,24 @@ git clone https://github.com/yourusername/portfolio-website.git
 
 ### Navigate to Project Folder
 ```bash
-cd portfolio-website<br>
+cd portfolio-website
 ```
 
 ### Install Dependencies
 
 ```bash
-npm install<br>
+npm install
 ```
 
 ### Start Development Server
 
 ```bash
-npm run dev<br>
+npm run dev
 ```
 ### Build For Production<br>
 
 ```bash
-npm run build<br>
+npm run build
 ```
 
 ---
