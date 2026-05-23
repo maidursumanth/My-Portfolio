@@ -106,35 +106,33 @@ Portfolio-Website/<br>
 
 ---<br>
 
-## ⚙️ Installation<br>
+## ⚙️ Installation
 
-### Clone Repository<br>
+### Clone Repository
 
-```bash<br>
+```bash
 git clone https://github.com/yourusername/portfolio-website.git
 ```
 
-### Navigate to Project Folder<br>
-
-```bash<br>
+### Navigate to Project Folder
+```bash
 cd portfolio-website<br>
 ```
 
-### Install Dependencies<br>
+### Install Dependencies
 
-```bash<br>
+```bash
 npm install<br>
 ```
 
-### Start Development Server<br>
+### Start Development Server
 
 ```bash
 npm run dev<br>
 ```
-<br>
 ### Build For Production<br>
 
-```bash<br>
+```bash
 npm run build<br>
 ```
 
